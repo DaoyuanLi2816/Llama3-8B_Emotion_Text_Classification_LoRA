@@ -58,7 +58,7 @@ Llama3-8b is a large language model developed by Meta AI, featuring 8 billion pa
 </div>
 
 <div align="center">
-    <img src="fig1.png" alt="Architecture of Llama3-8b" width="150">
+    <img src="fig1.png" alt="Architecture of Llama3-8b" width="250">
     <br>
     <b>Figure 1: Architecture of Llama3-8b</b>
 </div>
@@ -68,7 +68,7 @@ Llama3-8b is a large language model developed by Meta AI, featuring 8 billion pa
 LoRA integrates trainable low-rank matrices into each Transformer layer, significantly reducing the number of trainable parameters while keeping the main model weights unchanged. This approach enhances training efficiency and reduces storage needs without increasing inference latency.
 
 <div align="center">
-    <img src="fig2.png" alt="LoRA Training Method" width="150">
+    <img src="fig2.png" alt="LoRA Training Method" width="350">
     <br>
     <b>Figure 2: LoRA Training Method</b>
 </div>
@@ -84,7 +84,7 @@ FlashAttention optimizes the attention mechanism in Transformer models by enhanc
 The dataset includes six emotions: joy, sadness, anger, fear, love, and surprise. The distribution is relatively balanced, with "Joy" being the most common and "Surprise" the least common emotion.
 
 <div align="center">
-    <img src="fig3.png" alt="Emotion Text Label Distribution" width="150">
+    <img src="fig3.png" alt="Emotion Text Label Distribution" width="450">
     <br>
     <b>Figure 3: Emotion Text Label Distribution</b>
 </div>
@@ -137,7 +137,7 @@ The Adam optimizer was used for its adaptive learning rate capabilities, combine
 The primary metric used for evaluation is accuracy, defined as:
 
 $$
-	ext{Accuracy} = rac{	ext{TP} + 	ext{FN}}{	ext{TP} + 	ext{FP} + 	ext{FN} + 	ext{TN}}
+\text{Accuracy} = \frac{\text{TP} + \text{FN}}{\text{TP} + \text{FP} + \text{FN} + \text{TN}}
 $$
 
 Where:
