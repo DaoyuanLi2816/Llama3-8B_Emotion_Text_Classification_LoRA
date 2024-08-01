@@ -32,41 +32,6 @@ The architectural advancements in Llama3 include the implementation of Grouped-Q
 
 Llama3-8b is pretrained on a diverse dataset comprising more than 15 trillion tokens from publicly available data, with the model's knowledge cutoff set at March 2023. The fine-tuning phase utilized publicly available instruction datasets and over 10 million human-annotated examples, ensuring a robust understanding of various language tasks.
 
-<div align="center">
-    <table>
-        <tr>
-            <th>Feature</th>
-            <th>Specification</th>
-        </tr>
-        <tr>
-            <td>Training Data</td>
-            <td>Publicly available data</td>
-        </tr>
-        <tr>
-            <td>Parameters</td>
-            <td>8B</td>
-        </tr>
-        <tr>
-            <td>Context Length</td>
-            <td>8k</td>
-        </tr>
-        <tr>
-            <td>GQA</td>
-            <td>Yes</td>
-        </tr>
-        <tr>
-            <td>Token Count</td>
-            <td>15T+</td>
-        </tr>
-        <tr>
-            <td>Knowledge Cutoff</td>
-            <td>March 2023</td>
-        </tr>
-    </table>
-    <br>
-    <b>Table 1: Llama3-8b Model Details</b>
-</div>
-
 
 <div align="center">
     <table>
