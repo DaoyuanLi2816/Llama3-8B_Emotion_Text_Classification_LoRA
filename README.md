@@ -33,14 +33,14 @@ Llama3-8b is a large language model developed by Meta AI, featuring 8 billion pa
 | Knowledge Cutoff       | March 2023             |
 
 **Figure 1: Architecture of Llama3-8b**
-<img src="fig1.png" alt="Architecture of Llama3-8b" width="350">
+![Architecture of Llama3-8b](fig1.png)
 
 ### LoRA Technique
 
 LoRA integrates trainable low-rank matrices into each Transformer layer, significantly reducing the number of trainable parameters while keeping the main model weights unchanged. This approach enhances training efficiency and reduces storage needs without increasing inference latency.
 
 **Figure 2: LoRA Training Method**
-<img src="fig2.png" alt="LoRA Training Method" width="350">
+![LoRA Training Method](fig2.png)
 
 ### FlashAttention V2
 
@@ -53,7 +53,7 @@ FlashAttention optimizes the attention mechanism in Transformer models by enhanc
 The dataset includes six emotions: joy, sadness, anger, fear, love, and surprise. The distribution is relatively balanced, with "Joy" being the most common and "Surprise" the least common emotion.
 
 **Figure 3: Emotion Text Label Distribution**
-<img src="fig3.png" alt="Emotion Text Label Distribution" width="350">
+![Emotion Text Label Distribution](fig3.png)
 
 ### Experiment Settings
 
@@ -83,7 +83,7 @@ The Adam optimizer was used for its adaptive learning rate capabilities, combine
 
 The primary metric used for evaluation is accuracy, defined as:
 
-$$	ext{Accuracy} = rac{	ext{TP} + 	ext{TN}}{	ext{TP} + 	ext{FP} + 	ext{FN} + 	ext{TN}}$$
+\[\text{Accuracy} = \frac{\text{TP} + \text{TN}}{\text{TP} + \text{FP} + \text{FN} + \text{TN}}\]
 
 Where:
 - TP = True Positive
@@ -103,6 +103,10 @@ Where:
 ## Conclusion
 
 This project demonstrates the potential of large language models, such as Llama3-8b, in domain-specific tasks like emotion text classification. The model's performance, boosted by specialized techniques like LoRA and FlashAttention, underscores the effectiveness of large models in achieving high accuracy in NLP applications.
+
+## Acknowledgements
+
+This project is based on modifications to the repository [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory).
 
 ## Contact
 
