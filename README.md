@@ -23,6 +23,41 @@ Natural Language Processing (NLP) has become a key focus area for sentiment anal
 Llama3-8b is a large language model developed by Meta AI, featuring 8 billion parameters. It is designed for dialogue use cases and includes advancements such as Grouped-Query Attention (GQA), which optimizes memory and computational efficiency.
 
 <div align="center">
+    <table>
+        <tr>
+            <th>Feature</th>
+            <th>Specification</th>
+        </tr>
+        <tr>
+            <td>Training Data</td>
+            <td>Publicly available data</td>
+        </tr>
+        <tr>
+            <td>Parameters</td>
+            <td>8B</td>
+        </tr>
+        <tr>
+            <td>Context Length</td>
+            <td>8k</td>
+        </tr>
+        <tr>
+            <td>GQA</td>
+            <td>Yes</td>
+        </tr>
+        <tr>
+            <td>Token Count</td>
+            <td>15T+</td>
+        </tr>
+        <tr>
+            <td>Knowledge Cutoff</td>
+            <td>March 2023</td>
+        </tr>
+    </table>
+    <br>
+    <b>Table 1: Llama3-8b Model Details</b>
+</div>
+
+<div align="center">
     <img src="fig1.png" alt="Architecture of Llama3-8b" width="150">
     <br>
     <b>Figure 1: Architecture of Llama3-8b</b>
