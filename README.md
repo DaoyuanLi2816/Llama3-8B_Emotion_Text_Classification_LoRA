@@ -33,7 +33,7 @@ Llama3-8b is a large language model developed by Meta AI, featuring 8 billion pa
 | Knowledge Cutoff       | March 2023             |
 
 
-<img src="fig1.png" alt="Architecture of Llama3-8b" width="150">
+<img src="fig1.png" alt="Architecture of Llama3-8b" width="250">
 
 **Figure 1: Architecture of Llama3-8b**
 
@@ -42,8 +42,10 @@ Llama3-8b is a large language model developed by Meta AI, featuring 8 billion pa
 
 LoRA integrates trainable low-rank matrices into each Transformer layer, significantly reducing the number of trainable parameters while keeping the main model weights unchanged. This approach enhances training efficiency and reduces storage needs without increasing inference latency.
 
-**Figure 2: LoRA Training Method**
+
 <img src="fig2.png" alt="LoRA Training Method" width="250">
+
+**Figure 2: LoRA Training Method**
 
 
 ### FlashAttention V2
@@ -56,8 +58,10 @@ FlashAttention optimizes the attention mechanism in Transformer models by enhanc
 
 The dataset includes six emotions: joy, sadness, anger, fear, love, and surprise. The distribution is relatively balanced, with "Joy" being the most common and "Surprise" the least common emotion.
 
-**Figure 3: Emotion Text Label Distribution**
+
 <img src="fig3.png" alt="Emotion Text Label Distribution" width="450">
+
+**Figure 3: Emotion Text Label Distribution**
 
 ### Experiment Settings
 
