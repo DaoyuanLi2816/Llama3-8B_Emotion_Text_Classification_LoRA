@@ -22,33 +22,21 @@ Natural Language Processing (NLP) has become a key focus area for sentiment anal
 
 Llama3-8b is a large language model developed by Meta AI, featuring 8 billion parameters. It is designed for dialogue use cases and includes advancements such as Grouped-Query Attention (GQA), which optimizes memory and computational efficiency.
 
-**Table 1: Llama3-8b Model Details**
-| Feature                | Specification          |
-|------------------------|------------------------|
-| Training Data          | Publicly available data|
-| Parameters             | 8B                     |
-| Context Length         | 8k                     |
-| GQA                    | Yes                    |
-| Token Count            | 15T+                   |
-| Knowledge Cutoff       | March 2023             |
-
-
 <div align="center">
     <img src="fig1.png" alt="Architecture of Llama3-8b" width="150">
     <br>
     <b>Figure 1: Architecture of Llama3-8b</b>
 </div>
 
-
 ### LoRA Technique
 
 LoRA integrates trainable low-rank matrices into each Transformer layer, significantly reducing the number of trainable parameters while keeping the main model weights unchanged. This approach enhances training efficiency and reduces storage needs without increasing inference latency.
 
-
-<img src="fig2.png" alt="LoRA Training Method" width="250">
-
-**Figure 2: LoRA Training Method**
-
+<div align="center">
+    <img src="fig2.png" alt="LoRA Training Method" width="150">
+    <br>
+    <b>Figure 2: LoRA Training Method</b>
+</div>
 
 ### FlashAttention V2
 
@@ -60,32 +48,52 @@ FlashAttention optimizes the attention mechanism in Transformer models by enhanc
 
 The dataset includes six emotions: joy, sadness, anger, fear, love, and surprise. The distribution is relatively balanced, with "Joy" being the most common and "Surprise" the least common emotion.
 
-
-<img src="fig3.png" alt="Emotion Text Label Distribution" width="450">
-
-**Figure 3: Emotion Text Label Distribution**
+<div align="center">
+    <img src="fig3.png" alt="Emotion Text Label Distribution" width="150">
+    <br>
+    <b>Figure 3: Emotion Text Label Distribution</b>
+</div>
 
 ### Experiment Settings
 
-- **Optimizer**: Adam
-- **Learning Rate**: 5e-5
-- **Batch Size**: 5
-- **Epochs**: 3
-- **LoRA Rank**: 8
-- **Gradient Accumulation Steps**: 4
-- **Max Length**: 512 tokens
-- **Precision**: FP16 for reduced GPU memory usage
-
-**Table 2: Experiment Settings for Llama3-8b**
-| Parameter                    | Setting               |
-|------------------------------|-----------------------|
-| Optimizer                    | Adam                  |
-| Learning Rate                | 5e-5                  |
-| Batch Size                   | 5                     |
-| Epochs                       | 3                     |
-| LoRA Rank                    | 8                     |
-| Gradient Accumulation Steps  | 4                     |
-| Max Length                   | 512                   |
+<div align="center">
+    <table>
+        <tr>
+            <th>Parameter</th>
+            <th>Setting</th>
+        </tr>
+        <tr>
+            <td>Optimizer</td>
+            <td>Adam</td>
+        </tr>
+        <tr>
+            <td>Learning Rate</td>
+            <td>5e-5</td>
+        </tr>
+        <tr>
+            <td>Batch Size</td>
+            <td>5</td>
+        </tr>
+        <tr>
+            <td>Epochs</td>
+            <td>3</td>
+        </tr>
+        <tr>
+            <td>LoRA Rank</td>
+            <td>8</td>
+        </tr>
+        <tr>
+            <td>Gradient Accumulation Steps</td>
+            <td>4</td>
+        </tr>
+        <tr>
+            <td>Max Length</td>
+            <td>512</td>
+        </tr>
+    </table>
+    <br>
+    <b>Table 2: Experiment Settings for Llama3-8b</b>
+</div>
 
 The Adam optimizer was used for its adaptive learning rate capabilities, combined with a cosine learning rate schedule. FP16 precision was employed to save GPU memory.
 
@@ -94,7 +102,7 @@ The Adam optimizer was used for its adaptive learning rate capabilities, combine
 The primary metric used for evaluation is accuracy, defined as:
 
 $$
-\text{Accuracy} = \frac{\text{TP} + \text{FN}}{\text{TP} + \text{FP} + \text{FN} + \text{TN}}
+	ext{Accuracy} = rac{	ext{TP} + 	ext{FN}}{	ext{TP} + 	ext{FP} + 	ext{FN} + 	ext{TN}}
 $$
 
 Where:
@@ -103,14 +111,36 @@ Where:
 - FN = False Negative
 - TN = True Negative
 
-**Table 3: Accuracy Results for Different Models**
-| Model           | Accuracy |
-|-----------------|----------|
-| Bert-Base       | 0.9063   |
-| Bert-Large      | 0.9086   |
-| Roberta-Base    | 0.9125   |
-| Roberta-Large   | 0.9189   |
-| Llama3-8b       | 0.9262   |
+<div align="center">
+    <table>
+        <tr>
+            <th>Model</th>
+            <th>Accuracy</th>
+        </tr>
+        <tr>
+            <td>Bert-Base</td>
+            <td>0.9063</td>
+        </tr>
+        <tr>
+            <td>Bert-Large</td>
+            <td>0.9086</td>
+        </tr>
+        <tr>
+            <td>Roberta-Base</td>
+            <td>0.9125</td>
+        </tr>
+        <tr>
+            <td>Roberta-Large</td>
+            <td>0.9189</td>
+        </tr>
+        <tr>
+            <td>Llama3-8b</td>
+            <td>0.9262</td>
+        </tr>
+    </table>
+    <br>
+    <b>Table 3: Accuracy Results for Different Models</b>
+</div>
 
 ## Conclusion
 
