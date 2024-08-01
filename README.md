@@ -106,6 +106,7 @@ The Llama3-8b model's hyperparameters are set as follows:
 
 <div align="center">
     <table>
+        <caption><b>Table 2: Experiment Settings for Llama3-8b</b></caption>
         <tr>
             <th>Parameter</th>
             <th>Setting</th>
@@ -139,9 +140,8 @@ The Llama3-8b model's hyperparameters are set as follows:
             <td>512</td>
         </tr>
     </table>
-    <br>
-    <b>Table 2: Experiment Settings for Llama3-8b</b>
 </div>
+
 
 
 
@@ -170,6 +170,7 @@ The model's performance is compared against other popular NLP models, such as Be
 
 <div align="center">
     <table>
+        <caption><b>Table 3: Accuracy Results for Different Models</b></caption>
         <tr>
             <th>Model</th>
             <th>Accuracy</th>
@@ -195,9 +196,8 @@ The model's performance is compared against other popular NLP models, such as Be
             <td>0.9262</td>
         </tr>
     </table>
-    <br>
-    <b>Table 3: Accuracy Results for Different Models</b>
 </div>
+
 
 
 
