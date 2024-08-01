@@ -18,15 +18,17 @@ Natural Language Processing (NLP) has become a key focus area for sentiment anal
 
 ## Methods
 
-### Llama3-8b Model
-
-The Llama3-8b model, developed by Meta AI, is a large language model optimized for dialogue use cases. It contains 8 billion parameters and features significant improvements over previous models. The Llama3 series incorporates a multi-phase training process that includes pretraining, supervised fine-tuning, and iterative refinement using reinforcement learning with human feedback (RLHF). This process ensures that the model aligns closely with human preferences for helpfulness and safety.
-
 <div align="center">
     <img src="fig1.png" alt="Architecture of Llama3-8b" width="250">
     <br>
     <b>Figure 1: Architecture of Llama3-8b</b>
 </div>
+
+### Llama3-8b Model
+
+The Llama3-8b model, developed by Meta AI, is a large language model optimized for dialogue use cases. It contains 8 billion parameters and features significant improvements over previous models. The Llama3 series incorporates a multi-phase training process that includes pretraining, supervised fine-tuning, and iterative refinement using reinforcement learning with human feedback (RLHF). This process ensures that the model aligns closely with human preferences for helpfulness and safety.
+
+
 
 The architectural advancements in Llama3 include the implementation of Grouped-Query Attention (GQA). GQA clusters queries to share key-value pairs, thus reducing memory and computational costs while maintaining high performance. This method significantly enhances the efficiency of attention calculations, particularly in large-scale models.
 
@@ -206,9 +208,12 @@ The model's performance is compared against other popular NLP models, such as Be
 
 This project demonstrates the potential of large language models, such as Llama3-8b, in domain-specific tasks like emotion text classification. The model's performance, boosted by specialized techniques like LoRA and FlashAttention, underscores the effectiveness of large models in achieving high accuracy in NLP applications.
 
-## Acknowledgements
+## License
 
-This project is based on modifications to the repository [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory).
+This project is licensed under the Apache License 2.0 - see the [LICENSE](LICENSE) file for details.
+
+This project is based on modifications to the original work available under [LLaMA-Factory](https://github.com/hiyouga/LLaMA-Factory), which is licensed under the Apache License 2.0.
+
 
 ## Contact
 
