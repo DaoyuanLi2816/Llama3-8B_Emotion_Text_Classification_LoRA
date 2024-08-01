@@ -33,14 +33,14 @@ Llama3-8b is a large language model developed by Meta AI, featuring 8 billion pa
 | Knowledge Cutoff       | March 2023             |
 
 **Figure 1: Architecture of Llama3-8b**
-![Architecture of Llama3-8b](fig1.png)
+<img src="fig1.png" alt="Architecture of Llama3-8b" width="150">
 
 ### LoRA Technique
 
 LoRA integrates trainable low-rank matrices into each Transformer layer, significantly reducing the number of trainable parameters while keeping the main model weights unchanged. This approach enhances training efficiency and reduces storage needs without increasing inference latency.
 
 **Figure 2: LoRA Training Method**
-<img src="fig1.png" alt="Architecture of Llama3-8b" width="200">
+<img src="fig2.png" alt="LoRA Training Method" width="250">
 
 
 ### FlashAttention V2
@@ -84,9 +84,9 @@ The Adam optimizer was used for its adaptive learning rate capabilities, combine
 
 The primary metric used for evaluation is accuracy, defined as:
 
-\[
+$$
 \text{Accuracy} = \frac{\text{TP} + \text{FN}}{\text{TP} + \text{FP} + \text{FN} + \text{TN}}
-\]
+$$
 
 Where:
 - TP = True Positive
