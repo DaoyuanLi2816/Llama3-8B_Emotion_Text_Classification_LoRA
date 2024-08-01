@@ -20,7 +20,33 @@ Natural Language Processing (NLP) has become a key focus area for sentiment anal
 
 ### Llama3-8b Model
 
-Llama3-8b is a large language model developed by Meta AI, featuring 8 billion parameters. It is designed for dialogue use cases and includes advancements such as Grouped-Query Attention (GQA), which optimizes memory and computational efficiency.
+The Llama3-8b model, developed by Meta AI, is a large language model optimized for dialogue use cases. It contains 8 billion parameters and features significant improvements over previous models. The Llama3 series incorporates a multi-phase training process that includes pretraining, supervised fine-tuning, and iterative refinement using reinforcement learning with human feedback (RLHF). This process ensures that the model aligns closely with human preferences for helpfulness and safety.
+
+The architectural advancements in Llama3 include the implementation of Grouped-Query Attention (GQA). GQA clusters queries to share key-value pairs, thus reducing memory and computational costs while maintaining high performance. This method significantly enhances the efficiency of attention calculations, particularly in large-scale models.
+
+Llama3-8b is pretrained on a diverse dataset comprising more than 15 trillion tokens from publicly available data, with the model's knowledge cutoff set at March 2023. The fine-tuning phase utilized publicly available instruction datasets and over 10 million human-annotated examples, ensuring a robust understanding of various language tasks.
+
+#### Instruction Fine-Tuning
+
+Instruction fine-tuning enhances the model's zero-shot learning capabilities across diverse tasks. This technique involves training the model on datasets specifically designed to improve its ability to follow instructions. For example, models trained on datasets like Alpaca-7B can exhibit behaviors similar to OpenAI's text-davinci-003 in understanding and executing instructions.
+
+### LoRA Method for Training
+
+LoRA (Low-Rank Adaptation) is a technique used to integrate trainable rank decomposition matrices into each layer of the Transformer architecture. This method significantly reduces the number of trainable parameters while adapting large language models to specific tasks or domains. Unlike full fine-tuning, LoRA keeps the pretrained model weights unchanged, updating only the low-rank matrices during the adaptation process. This approach enhances training efficiency, reduces storage needs, and does not increase inference latency compared to fully fine-tuned models.
+
+### FlashAttention V2
+
+FlashAttention V2 is an optimization technique designed to accelerate the attention mechanism in Transformer models. It focuses on improving computational efficiency and reducing memory usage during training. FlashAttention achieves this by breaking down attention computation into smaller, more manageable chunks, thereby enhancing cache utilization and reducing memory access. Additionally, it employs sparse matrix operations to leverage the sparsity in attention mechanisms, which helps bypass unnecessary computations. Pipelined operations enable parallel execution of different computation stages, further minimizing processing time.
+
+## Experimentation
+
+### Data Analysis
+
+The dataset used for training the model consists of text labeled with six emotions: joy, sadness, anger, fear, love, and surprise. The distribution of the dataset is relatively balanced, with "Joy" being the most common emotion and "Surprise" the least. This balanced distribution provides a strong foundation for the model to accurately classify emotions without bias towards any particular category.
+
+### Experiment Settings
+
+The Llama3-8b model's hyperparameters are set as follows:
 
 <div align="center">
     <table>
