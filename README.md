@@ -67,6 +67,42 @@ Llama3-8b is pretrained on a diverse dataset comprising more than 15 trillion to
     <b>Table 1: Llama3-8b Model Details</b>
 </div>
 
+
+<div align="center">
+    <table>
+        <caption><b>Table 1: Llama3-8b Model Details</b></caption>
+        <tr>
+            <th>Feature</th>
+            <th>Specification</th>
+        </tr>
+        <tr>
+            <td>Training Data</td>
+            <td>Publicly available data</td>
+        </tr>
+        <tr>
+            <td>Parameters</td>
+            <td>8B</td>
+        </tr>
+        <tr>
+            <td>Context Length</td>
+            <td>8k</td>
+        </tr>
+        <tr>
+            <td>GQA</td>
+            <td>Yes</td>
+        </tr>
+        <tr>
+            <td>Token Count</td>
+            <td>15T+</td>
+        </tr>
+        <tr>
+            <td>Knowledge Cutoff</td>
+            <td>March 2023</td>
+        </tr>
+    </table>
+</div>
+
+
 ### Instruction Fine-Tuning
 
 Instruction fine-tuning enhances the model's zero-shot learning capabilities across diverse tasks. This technique involves training the model on datasets specifically designed to improve its ability to follow instructions. For example, models trained on datasets like Alpaca-7B can exhibit behaviors similar to OpenAI's text-davinci-003 in understanding and executing instructions.
