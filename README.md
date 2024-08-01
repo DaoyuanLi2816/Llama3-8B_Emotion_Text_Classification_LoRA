@@ -89,6 +89,27 @@ The Llama3-8b model's hyperparameters are set as follows:
     <b>Figure 1: Architecture of Llama3-8b</b>
 </div>
 
+
+The model is trained using the Adam optimizer, known for its adaptive learning rate capabilities. A cosine learning rate schedule is employed to adjust the learning rate during training. The batch size is set to 5, with gradient accumulation over 4 steps to optimize memory usage. The model is trained for 3 epochs, with the FP16 precision format used to save GPU memory while maintaining performance. The LoRA rank of 8 indicates the order of the low-rank matrix used in the adaptation process.
+
+### Evaluation Metrics
+
+The primary metric used to evaluate the model's performance is accuracy. This metric measures the proportion of correct predictions made by the model out of all predictions. The formula for accuracy is:
+
+$$
+\text{Accuracy} = \frac{\text{TP} + \text{FN}}{\text{TP} + \text{FP} + \text{FN} + \text{TN}}
+$$
+
+Where:
+- TP = True Positive
+- FP = False Positive
+- FN = False Negative
+- TN = True Negative
+
+### Experiment Analysis
+
+The model's performance is compared against other popular NLP models, such as Bert-Base, Bert-Large, Roberta-Base, and Roberta-Large. The Llama3-8b model achieves the highest accuracy of 0.9262, demonstrating the effectiveness of instruction fine-tuning and the model's large parameter set. The superior performance of Llama3-8b in this task underscores the advantages of large language models in achieving high accuracy across diverse and challenging text classification tasks.
+
 ### LoRA Technique
 
 LoRA integrates trainable low-rank matrices into each Transformer layer, significantly reducing the number of trainable parameters while keeping the main model weights unchanged. This approach enhances training efficiency and reduces storage needs without increasing inference latency.
