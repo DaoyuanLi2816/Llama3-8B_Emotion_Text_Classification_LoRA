@@ -22,31 +22,15 @@ Natural Language Processing (NLP) has become a key focus area for sentiment anal
 
 The Llama3-8b model, developed by Meta AI, is a large language model optimized for dialogue use cases. It contains 8 billion parameters and features significant improvements over previous models. The Llama3 series incorporates a multi-phase training process that includes pretraining, supervised fine-tuning, and iterative refinement using reinforcement learning with human feedback (RLHF). This process ensures that the model aligns closely with human preferences for helpfulness and safety.
 
+<div align="center">
+    <img src="fig1.png" alt="Architecture of Llama3-8b" width="250">
+    <br>
+    <b>Figure 1: Architecture of Llama3-8b</b>
+</div>
+
 The architectural advancements in Llama3 include the implementation of Grouped-Query Attention (GQA). GQA clusters queries to share key-value pairs, thus reducing memory and computational costs while maintaining high performance. This method significantly enhances the efficiency of attention calculations, particularly in large-scale models.
 
 Llama3-8b is pretrained on a diverse dataset comprising more than 15 trillion tokens from publicly available data, with the model's knowledge cutoff set at March 2023. The fine-tuning phase utilized publicly available instruction datasets and over 10 million human-annotated examples, ensuring a robust understanding of various language tasks.
-
-#### Instruction Fine-Tuning
-
-Instruction fine-tuning enhances the model's zero-shot learning capabilities across diverse tasks. This technique involves training the model on datasets specifically designed to improve its ability to follow instructions. For example, models trained on datasets like Alpaca-7B can exhibit behaviors similar to OpenAI's text-davinci-003 in understanding and executing instructions.
-
-### LoRA Method for Training
-
-LoRA (Low-Rank Adaptation) is a technique used to integrate trainable rank decomposition matrices into each layer of the Transformer architecture. This method significantly reduces the number of trainable parameters while adapting large language models to specific tasks or domains. Unlike full fine-tuning, LoRA keeps the pretrained model weights unchanged, updating only the low-rank matrices during the adaptation process. This approach enhances training efficiency, reduces storage needs, and does not increase inference latency compared to fully fine-tuned models.
-
-### FlashAttention V2
-
-FlashAttention V2 is an optimization technique designed to accelerate the attention mechanism in Transformer models. It focuses on improving computational efficiency and reducing memory usage during training. FlashAttention achieves this by breaking down attention computation into smaller, more manageable chunks, thereby enhancing cache utilization and reducing memory access. Additionally, it employs sparse matrix operations to leverage the sparsity in attention mechanisms, which helps bypass unnecessary computations. Pipelined operations enable parallel execution of different computation stages, further minimizing processing time.
-
-## Experimentation
-
-### Data Analysis
-
-The dataset used for training the model consists of text labeled with six emotions: joy, sadness, anger, fear, love, and surprise. The distribution of the dataset is relatively balanced, with "Joy" being the most common emotion and "Surprise" the least. This balanced distribution provides a strong foundation for the model to accurately classify emotions without bias towards any particular category.
-
-### Experiment Settings
-
-The Llama3-8b model's hyperparameters are set as follows:
 
 <div align="center">
     <table>
@@ -83,36 +67,13 @@ The Llama3-8b model's hyperparameters are set as follows:
     <b>Table 1: Llama3-8b Model Details</b>
 </div>
 
-<div align="center">
-    <img src="fig1.png" alt="Architecture of Llama3-8b" width="250">
-    <br>
-    <b>Figure 1: Architecture of Llama3-8b</b>
-</div>
+### Instruction Fine-Tuning
 
+Instruction fine-tuning enhances the model's zero-shot learning capabilities across diverse tasks. This technique involves training the model on datasets specifically designed to improve its ability to follow instructions. For example, models trained on datasets like Alpaca-7B can exhibit behaviors similar to OpenAI's text-davinci-003 in understanding and executing instructions.
 
-The model is trained using the Adam optimizer, known for its adaptive learning rate capabilities. A cosine learning rate schedule is employed to adjust the learning rate during training. The batch size is set to 5, with gradient accumulation over 4 steps to optimize memory usage. The model is trained for 3 epochs, with the FP16 precision format used to save GPU memory while maintaining performance. The LoRA rank of 8 indicates the order of the low-rank matrix used in the adaptation process.
+### LoRA Method for Training
 
-### Evaluation Metrics
-
-The primary metric used to evaluate the model's performance is accuracy. This metric measures the proportion of correct predictions made by the model out of all predictions. The formula for accuracy is:
-
-$$
-\text{Accuracy} = \frac{\text{TP} + \text{FN}}{\text{TP} + \text{FP} + \text{FN} + \text{TN}}
-$$
-
-Where:
-- TP = True Positive
-- FP = False Positive
-- FN = False Negative
-- TN = True Negative
-
-### Experiment Analysis
-
-The model's performance is compared against other popular NLP models, such as Bert-Base, Bert-Large, Roberta-Base, and Roberta-Large. The Llama3-8b model achieves the highest accuracy of 0.9262, demonstrating the effectiveness of instruction fine-tuning and the model's large parameter set. The superior performance of Llama3-8b in this task underscores the advantages of large language models in achieving high accuracy across diverse and challenging text classification tasks.
-
-### LoRA Technique
-
-LoRA integrates trainable low-rank matrices into each Transformer layer, significantly reducing the number of trainable parameters while keeping the main model weights unchanged. This approach enhances training efficiency and reduces storage needs without increasing inference latency.
+LoRA (Low-Rank Adaptation) is a technique used to integrate trainable rank decomposition matrices into each layer of the Transformer architecture. This method significantly reduces the number of trainable parameters while adapting large language models to specific tasks or domains. Unlike full fine-tuning, LoRA keeps the pretrained model weights unchanged, updating only the low-rank matrices during the adaptation process. This approach enhances training efficiency, reduces storage needs, and does not increase inference latency compared to fully fine-tuned models.
 
 <div align="center">
     <img src="fig2.png" alt="LoRA Training Method" width="350">
@@ -120,15 +81,13 @@ LoRA integrates trainable low-rank matrices into each Transformer layer, signifi
     <b>Figure 2: LoRA Training Method</b>
 </div>
 
-### FlashAttention V2
+### Flash Attention V2
 
-FlashAttention optimizes the attention mechanism in Transformer models by enhancing computational efficiency and reducing memory usage. It uses block-wise computation and sparse matrix operations to improve cache utilization and minimize processing time.
+FlashAttention V2 is an optimization technique designed to accelerate the attention mechanism in Transformer models. It focuses on improving computational efficiency and reducing memory usage during training. FlashAttention achieves this by breaking down attention computation into smaller, more manageable chunks, thereby enhancing cache utilization and reducing memory access. Additionally, it employs sparse matrix operations to leverage the sparsity in attention mechanisms, which helps bypass unnecessary computations. Pipelined operations enable parallel execution of different computation stages, further minimizing processing time.
+
+
 
 ## Experimentation
-
-### Data Analysis
-
-The dataset includes six emotions: joy, sadness, anger, fear, love, and surprise. The distribution is relatively balanced, with "Joy" being the most common and "Surprise" the least common emotion.
 
 <div align="center">
     <img src="fig3.png" alt="Emotion Text Label Distribution" width="450">
@@ -136,7 +95,13 @@ The dataset includes six emotions: joy, sadness, anger, fear, love, and surprise
     <b>Figure 3: Emotion Text Label Distribution</b>
 </div>
 
+### Data Analysis
+
+The dataset used for training the model consists of text labeled with six emotions: joy, sadness, anger, fear, love, and surprise. The distribution of the dataset is relatively balanced, with "Joy" being the most common emotion and "Surprise" the least. This balanced distribution provides a strong foundation for the model to accurately classify emotions without bias towards any particular category.
+
 ### Experiment Settings
+
+The Llama3-8b model's hyperparameters are set as follows:
 
 <div align="center">
     <table>
@@ -177,11 +142,16 @@ The dataset includes six emotions: joy, sadness, anger, fear, love, and surprise
     <b>Table 2: Experiment Settings for Llama3-8b</b>
 </div>
 
-The Adam optimizer was used for its adaptive learning rate capabilities, combined with a cosine learning rate schedule. FP16 precision was employed to save GPU memory.
+
+
+
+
+
+The model is trained using the Adam optimizer, known for its adaptive learning rate capabilities. A cosine learning rate schedule is employed to adjust the learning rate during training. The batch size is set to 5, with gradient accumulation over 4 steps to optimize memory usage. The model is trained for 3 epochs, with the FP16 precision format used to save GPU memory while maintaining performance. The LoRA rank of 8 indicates the order of the low-rank matrix used in the adaptation process.
 
 ### Evaluation Metrics
 
-The primary metric used for evaluation is accuracy, defined as:
+The primary metric used to evaluate the model's performance is accuracy. This metric measures the proportion of correct predictions made by the model out of all predictions. The formula for accuracy is:
 
 $$
 \text{Accuracy} = \frac{\text{TP} + \text{FN}}{\text{TP} + \text{FP} + \text{FN} + \text{TN}}
@@ -192,6 +162,10 @@ Where:
 - FP = False Positive
 - FN = False Negative
 - TN = True Negative
+
+### Experiment Analysis
+
+The model's performance is compared against other popular NLP models, such as Bert-Base, Bert-Large, Roberta-Base, and Roberta-Large. The Llama3-8b model achieves the highest accuracy of 0.9262, demonstrating the effectiveness of instruction fine-tuning and the model's large parameter set. The superior performance of Llama3-8b in this task underscores the advantages of large language models in achieving high accuracy across diverse and challenging text classification tasks.
 
 <div align="center">
     <table>
@@ -223,6 +197,9 @@ Where:
     <br>
     <b>Table 3: Accuracy Results for Different Models</b>
 </div>
+
+
+
 
 ## Conclusion
 
