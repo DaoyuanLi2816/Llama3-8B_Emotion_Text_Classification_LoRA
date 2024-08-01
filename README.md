@@ -32,7 +32,9 @@ Llama3-8b is a large language model developed by Meta AI, featuring 8 billion pa
 | Token Count            | 15T+                   |
 | Knowledge Cutoff       | March 2023             |
 
+
 <img src="fig1.png" alt="Architecture of Llama3-8b" width="150">
+
 **Figure 1: Architecture of Llama3-8b**
 
 
